@@ -71,21 +71,21 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.high-contrast',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken: 'pk.eyJ1IjoibW9kZWxvYm9vdGNhbXAiLCJhIjoiY2p2ajB0bHVjMDVzMzQ4cGJwc3Awb2J1aSJ9.EqOe7ebL_KhiMTeGJtcxZA'
     });
 
     var streetMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken: 'pk.eyJ1IjoibW9kZWxvYm9vdGNhbXAiLCJhIjoiY2p2ajB0bHVjMDVzMzQ4cGJwc3Awb2J1aSJ9.EqOe7ebL_KhiMTeGJtcxZA'
     });
 
     var darkMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.dark',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken: 'pk.eyJ1IjoibW9kZWxvYm9vdGNhbXAiLCJhIjoiY2p2ajB0bHVjMDVzMzQ4cGJwc3Awb2J1aSJ9.EqOe7ebL_KhiMTeGJtcxZA'
     });
 
 
@@ -93,7 +93,7 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.satellite',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken: 'pk.eyJ1IjoibW9kZWxvYm9vdGNhbXAiLCJhIjoiY2p2ajB0bHVjMDVzMzQ4cGJwc3Awb2J1aSJ9.EqOe7ebL_KhiMTeGJtcxZA'
     });
 
 
@@ -112,23 +112,12 @@ function createMap() {
     var mymap = L.map('mymap', {
         center: [40, -99],
         zoom: 4.3,
-        // timeDimension: true,
-        // timeDimensionOptions: {
-        //     timeInterval: "2018-04-01/2018-04-05",
-        //     period: "PT1H"
-        // },
-        // timeDimensionControl: true,
+      
         layers: [streetMap, earthquakes, plateBoundary]
     });
 
     L.control.layers(baseLayers, overlays).addTo(mymap);
-    // L.timeDimension.earthquakes.geoJson(earthquakes).addTo(mymap);
-    // L.control.timeDimension().addTo(mymap);
-    // var player = new L.TimeDimension.Player({}, timeDimension).addTo(mymap);
-
-    // var tdWmsLayer = L.timeDimension.layer.wms(wmsLayer);
-    // tdWmsLayer.addTo(map);
-
+  
     var legend = L.control({ position: 'bottomright' });
 
     legend.onAdd = function (map) {
